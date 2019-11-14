@@ -17,8 +17,21 @@ $("input[type='text']").keypress(function (event) {
        //Grab the ToDo
   var newTodo = $("input[type='text']").val()
         //Create new element
-        $('ul').append('<li><span>X </span>'+ newTodo + '</li>')
+        $('ul').append('<li><span><i class="far fa-trash-alt"></i> </span>'+ newTodo + '</li>')
+        // Reset input
+        $("input[type='text']").val('')
+       
    } 
+})
+
+// When plus clicked focus on the input
+$('#focus').on('click', function () {
+    if($('#focus').css('color') === 'rgb(0, 0, 0)') {
+        $('#focus').css('color', 'white')
+    } else {
+        $(this).css('color', 'black')
+    $("input[type='text']").focus();
+    }
 })
 
 
